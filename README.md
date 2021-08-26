@@ -1,7 +1,8 @@
-# TanzanianWaterProblems
+# Tanzanian Water Problems
+
 ## Overview
 
-A one-paragraph overview of the project, including the business problem, data, methods, results and recommendations.
+Through DrivenData.org I have been tasked to predict whether or not a water point in Tanzania will need repairs. I am to use data telling me about location, what type of pump is being used and how its being managed in order to predict if it needs repairs or not. I use a Decision Tree Classifier that has been tuned to this data. I end up with more false positives than I would like as that means my model predicted the water point doesn't need repair, when in fact it does. This means more Tanzanians will go without water than I want.
 
 ## Business Problem
 
@@ -9,13 +10,11 @@ Tanzania has issues providing clean water to its population of over 57,000,000. 
 
 ## Data
 
-Describe the data being used for this project.
 The data I am using was sourced from Taarfia and The Tanzanian Ministry of Water. Given that this data is from a competition I know that it perfectly relates to the business problem. The data gives information about the location of the water point, what type of pump is being used, how its being managed and when it was installed. Using this information I need to predict whether a pump is functional, needs some repairs or doesn't work at all.
-
 
 ## Methods
 
-First to analyze I dove into looking through all the value counts for my variables. Looking to figure out which columns I was going to use. What I was looking for was medium variety, high null value count, checking for null replacement values etc. This was a ternary classification problem however I converted it to a binary classification problem to save on time. After cleaning I decided to go with a simple GridSearchCV Decision Tree Classifier. I did a simple model instead of a more complicated one because I want to know which variables are affecting my model the most. My first step was hyperparameter tuning of which the results for accuracy can be found below.
+First to analyze I dove into looking through all the value counts for my variables. Looking to figure out which columns I was going to use. What I was looking for was medium variety, high null value count, checking for null replacement values etc. This was a ternary classification problem however I converted it to a binary classification problem to save on time. After cleaning I decided to go with a simple GridSearchCV Decision Tree Classifier. I did a simple model instead of a more complicated one because I want to know which variables are affecting my model the most. My main step was hyperparameter tuning of which the results for accuracy can be found below.
 ![MaxDepths](./Images/MaxDepths.png)
 ![MaxFeatures](./Images/MaxFeatures.png)
 ![MinSamplesLeafs](./Images/MinSamplesLeafs.png)
@@ -25,43 +24,27 @@ I used these results to find a starting point for my Grid Search to build my fin
 
 ## Results
 
+I ended with an accuracy score of 0.8026 so I can confidently say that this model would help with improving maintenace costs and time, and ensure the availability of clean water to Tanzanians. The most important variables for my model ended up being quantity of water, what type of extraction, what year it was built and the location. Due to me not going deeper and changing the problem back to ternary we ended up with a lot more false postitves then false negatives. As seen below from my confusion matrix.
 
 ![ConfusionMatrix](./Images/ConfusionMatrix.png)
-***
-Questions to consider:
-* How do you interpret the results?
-* How confident are you that your results would generalize beyond the data you have?
-***
-
-Here is an example of how to embed images from your sub-folder:
-
-
-
 
 ## Conclusions
 
-Provide your conclusions about the work you've done, including any limitations or next steps.
-
-***
-Questions to consider:
-* What would you recommend the business do as a result of this work?
-* What are some reasons why your analysis might not fully solve the business problem?
-* What else could you do in the future to improve this project?
-***
+The Tanzanian Ministry of Water can use this model to predict which water point will need repairs or not. The next step to make this model better predict for the Tanzanian Ministry of Water would be to train the model to be stricter when predicting that the water point is working.
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-template.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
-
-For any additional questions, please contact **name & email, name & email**
+Please review my full analysis in [my Jupyter Notebook](./FinalProduct.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+Additonal Notebooks: 
+[Exploration](./MaidenVoyage.ipynb)
+[Hyperparameter Tuning](./Hyperparameter_tuning.ipynb)
+For any additional questions, please contact Ethan Helder at helderethan@gmail.com
 
 ## Repository Structure
-
-Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
 ├── FinalProduct.ipynb   <- Narrative documentation of analysis in Jupyter notebook
 ├── TanzanianWaterPresentation.pdf         <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
-└── Images                              <- Both sourced externally and generated from code
+├── Data                                <- Both sourced externally and generated from code
+└── Images                              <- Generated from code
