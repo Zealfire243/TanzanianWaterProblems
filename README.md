@@ -15,25 +15,18 @@ The data I am using was sourced from Taarfia and The Tanzanian Ministry of Water
 
 ## Methods
 
-First to analyze I dove into looking through all the value counts for 
-
-
-![MaxDepths](./images/MaxDepths.png)
-![MaxFeatures](./images/MaxFeatures.png)
-![MinSamplesLeafs](./images/MinSamplesLeafs.png)
-![MinSamplesSplits](./images/MinSamplesSplits.png)
-![MinWeightFractionLeafs](./images/MinWeightFractionLeafs.png)
-***
-Questions to consider:
-* How did you prepare, analyze or model the data?
-* Why is this approach appropriate given the data and the business problem?
-***
+First to analyze I dove into looking through all the value counts for my variables. Looking to figure out which columns I was going to use. What I was looking for was medium variety, high null value count, checking for null replacement values etc. This was a ternary classification problem however I converted it to a binary classification problem to save on time. After cleaning I decided to go with a simple GridSearchCV Decision Tree Classifier. I did a simple model instead of a more complicated one because I want to know which variables are affecting my model the most. My first step was hyperparameter tuning of which the results for accuracy can be found below.
+![MaxDepths](./Images/MaxDepths.png)
+![MaxFeatures](./Images/MaxFeatures.png)
+![MinSamplesLeafs](./Images/MinSamplesLeafs.png)
+![MinSamplesSplits](./Images/MinSamplesSplits.png)
+![MinWeightFractionLeafs](./Images/MinWeightFractionLeafs.png)
+I used these results to find a starting point for my Grid Search to build my final model. 
 
 ## Results
 
-Present your key results. For Phase 1, this will be findings from your descriptive analysis.
 
-![ConfusionMatrix](./images/ConfusionMatrix.png)
+![ConfusionMatrix](./Images/ConfusionMatrix.png)
 ***
 Questions to consider:
 * How do you interpret the results?
@@ -68,7 +61,7 @@ Describe the structure of your repository and its contents, for example:
 
 ```
 ├── README.md                           <- The top-level README for reviewers of this project
-├── dsc-phase1-project-template.ipynb   <- Narrative documentation of analysis in Jupyter notebook
-├── DS_Project_Presentation.pdf         <- PDF version of project presentation
+├── FinalProduct.ipynb   <- Narrative documentation of analysis in Jupyter notebook
+├── TanzanianWaterPresentation.pdf         <- PDF version of project presentation
 ├── data                                <- Both sourced externally and generated from code
-└── images                              <- Both sourced externally and generated from code
+└── Images                              <- Both sourced externally and generated from code
