@@ -34,10 +34,10 @@ The Tanzanian Ministry of Water can use this model to predict which water point 
 
 ## For More Information
 
-Please review my full analysis in [my Jupyter Notebook](./FinalProduct.ipynb) or our [presentation](./DS_Project_Presentation.pdf).
+Please review my full analysis in [my Jupyter Notebook](./Notebooks/FinalProduct.ipynb) or our [presentation](./TanzanianWaterPresentation.pdf).
 Additonal Notebooks: 
-[Exploration](./MaidenVoyage.ipynb)
-[Hyperparameter Tuning](./Hyperparameter_tuning.ipynb)
+[Exploration](./Notebooks/MaidenVoyage.ipynb)
+[Hyperparameter Tuning](./Notebooks/Hyperparameter_tuning.ipynb)
 For any additional questions, please contact Ethan Helder at helderethan@gmail.com
 
 ## Repository Structure
